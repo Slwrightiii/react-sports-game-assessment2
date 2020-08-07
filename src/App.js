@@ -1,24 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Team from "./components/team/Team";
+import Game from "./components/game/Game";
+import Scoreboard from "./components/scoreboard/Scoreboard";
 
 function App() {
+  const gazelles = {
+    name: "Thomsonville Gazelles",
+    logoSrc: "./assets/images/gazelle3.jpg",
+  };
+
+  const frogs = {
+    name: "Younge City Frogs",
+    logoSrc: "./assets/images/frog2.jpg",
+  };
+
+  const salamanders = {
+    name: "ShakerTown Salamanders",
+    logoSrc: "./assets/images/salamander.jpg",
+  };
+  const amardillos = {
+    name: "Fort Brannon Amardillos",
+    logoSrc: "./assets/images/amardillo.jpg",
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Team />
+      <Game
+        venue="Westinghouse Park"
+        homeTeam={frogs}
+        visitingTeam={gazelles}
+      />
+
+      <Game
+        venue="Steinmitz Place"
+        homeTeam={salamanders}
+        visitingTeam={amardillos}
+      />
+
+      <Scoreboard />
     </div>
   );
 }
